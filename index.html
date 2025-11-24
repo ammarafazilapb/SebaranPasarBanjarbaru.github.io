@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="css/fontawesome-all.min.css">
         <link rel="stylesheet" href="css/leaflet.photon.css">
         <link rel="stylesheet" href="css/leaflet-measure.css">
+		<link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
         <style>
         html, body, #map {
             width: 100%;
@@ -518,6 +519,11 @@
 			position: 'bottomleft'
 		});
 		scale.addTo(map);
+
+		var searchControl = L.Control.geocoder({
+   			placeholder: "Cari lokasi...", 
+    		collapsed: false
+		}).addTo(map).setPosition('bottomright');
         </script>
     </body>
 </html>
