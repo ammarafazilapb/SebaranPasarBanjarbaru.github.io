@@ -19,10 +19,28 @@
             padding: 0;
             margin: 0;
         }
+        header {
+			position: fixed;
+			top: 0;
+			width: 100%;
+			z-index: 999;
+			background-color: #3182bd;
+			padding: 1px;
+			text-align: center;
+			color: white;
+		}
+		#map {
+			height: calc(100%-60px);
+			margin-top:60px;
+		}
+		
         </style>
-        <title></title>
+        <title>WebGIS Kota Banjarbaru</title>
     </head>
     <body>
+	<header>
+		<h1>Sebaran Pasar di Kota Banjarbaru, Kalimantan Selatan</h1>
+	</header>
         <div id="map">
         </div>
         <script src="js/qgis2web_expressions.js"></script>
@@ -493,6 +511,13 @@
             }  
         });       
         setBounds();
+		
+		var scale = L.control.scale({
+			metric: true,
+			imperial: false,
+			position: 'bottomleft'
+		});
+		scale.addTo(map);
         </script>
     </body>
 </html>
